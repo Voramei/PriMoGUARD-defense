@@ -19,7 +19,7 @@ def generate_query_log_with_lira_patterns():
     
     # BENIGN USERS: Random walk behavior
     print(f"Generating {num_benign} benign users...")
-    for i in tqdm(range(num_benign), desc="Benign users"):
+    for i in range(num_benign):
         user = f"B{i}"
         current = random.choice(nodes)
         
@@ -43,7 +43,7 @@ def generate_query_log_with_lira_patterns():
     # ADVERSARY USERS: LiRA-style attacks (targeted, bursty, high influencer nodes)
     
     print(f"\nGenerating {num_adv} adversary users (LiRA attack patterns)...")
-    for i in tqdm(range(num_adv), desc="Adversary users"):
+    for i in range(num_adv):
         user = f"A{i}"
         
         for _ in range(30):  # 30 queries per user
